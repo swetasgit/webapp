@@ -24,7 +24,7 @@ tools {nodejs "node" }
             sh 'sudo docker build . -t docswe/node-web-app'
                 }
         }
-		stage('Push Image to private registry server') {
+		stage('Deploy') {
 		steps{
 		    script {
             withDockerRegistry(credentialsId: 'test', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/docswe/dockerapp') {
